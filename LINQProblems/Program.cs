@@ -10,6 +10,8 @@ namespace LINQProblems
     {
         static void Main(string[] args)
         {
+            Problem problem = new Problem();
+            problem.Problem1();
         }
     }
 }
