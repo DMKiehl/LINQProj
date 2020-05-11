@@ -52,7 +52,8 @@ namespace LINQProblems
             {
                 double[] grades = studentGrades.Split(',').Select(g => Convert.ToDouble(g)).OrderByDescending(s => s).ToArray();
                 grades = grades.Take(grades.Length - 1).ToArray();
-                averageNum += AverageGrades(grades);
+                double average = grades.Average();
+                averageNum += average;
         
                 
             }
@@ -65,22 +66,31 @@ namespace LINQProblems
 
         }
 
-        public double AverageGrades(double [] array)
-        {
-            double averageSum = 0;
+        //public double AverageGrades(double [] array)
+        //{
+        //    double averageSum = 0;
 
-            int count = array.Count();
-            foreach (var grade in array)
-            {
-                averageSum += grade;
-            }
+        //    int count = array.Count();
+        //    foreach (var grade in array)
+        //    {
+        //        averageSum += grade;
+        //    }
 
-            double finalSum = averageSum/count;
-            return finalSum;
-        }
+        //    double finalSum = averageSum/count;
+        //    return finalSum;
+        //}
 
         //Problem 4
+        public string Problem4(string userInput)
+        {
+            string letterCount = "";
+            int count = 0;
 
+
+            return letterCount;
+
+
+        }
 
     }
 
