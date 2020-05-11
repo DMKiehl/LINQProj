@@ -26,5 +26,22 @@ namespace LINQProblems
 
         }
 
+        public void Problem2()
+        {
+            var names = new List<string>() { "Mike", "Brad", "Nevin", "Zack", "Mike" };
+            var getNames = names.Distinct();
+
+            foreach (var name in getNames)
+            {
+                Console.WriteLine(name);
+            }
+
+        }
+
+        public void Problem3()
+        {
+
+        }
+
     }
 }

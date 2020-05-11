@@ -12,6 +12,8 @@ namespace LINQProblems
         {
             Problem problem = new Problem();
             problem.Problem1();
+
+            problem.Problem2();
         }
     }
 }
