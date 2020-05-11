@@ -14,6 +14,8 @@ namespace LINQProblems
             problem.Problem1();
 
             problem.Problem2();
+
+            problem.Problem3();
         }
     }
 }

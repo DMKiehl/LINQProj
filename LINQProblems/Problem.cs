@@ -14,6 +14,7 @@ namespace LINQProblems
 
         //member methods
 
+            //Problem 1
         public void Problem1()
         {
             var words = new List<string>() { "the", "bike", "this", "it", "tenth", "mathematics" };
@@ -25,6 +26,8 @@ namespace LINQProblems
             }
 
         }
+
+         //Problem 2
 
         public void Problem2()
         {
@@ -38,10 +41,47 @@ namespace LINQProblems
 
         }
 
+        //Problem 3
         public void Problem3()
         {
+            double averageNum = 0;
+            var classGrades = new List<string> { "80,100,92,89,65", "93,81,78,84,69", "73,88,83,99,64", "98,100,66,74,55" };
+            int count = classGrades.Count();
+
+            foreach (var studentGrades in classGrades)
+            {
+                double[] grades = studentGrades.Split(',').Select(g => Convert.ToDouble(g)).OrderByDescending(s => s).ToArray();
+                grades = grades.Take(grades.Length - 1).ToArray();
+                averageNum += AverageGrades(grades);
+        
+                
+            }
+
+
+            double finalNumber = averageNum / count;
+            Console.WriteLine(finalNumber);
+            //Console.ReadLine();
+
 
         }
 
+        public double AverageGrades(double [] array)
+        {
+            double averageSum = 0;
+
+            int count = array.Count();
+            foreach (var grade in array)
+            {
+                averageSum += grade;
+            }
+
+            double finalSum = averageSum/count;
+            return finalSum;
+        }
+
+        //Problem 4
+
+
     }
+
 }
