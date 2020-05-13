@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,7 +51,7 @@ namespace LINQProblems
 
             foreach (var studentGrades in classGrades)
             {
-                double[] grades = studentGrades.Split(',').Select(g => Convert.ToDouble(g)).OrderByDescending(s => s).ToArray();
+                double[] grades = studentGrades.Split(',').Select(g => Convert.ToDouble(g)).OrderByDescending(g => g).ToArray();
                 grades = grades.Take(grades.Length - 1).ToArray();
                 double average = grades.Average();
                 averageNum += average;
@@ -61,32 +62,22 @@ namespace LINQProblems
 
             double finalNumber = averageNum / count;
             Console.WriteLine(finalNumber);
-            //Console.ReadLine();
-
-
         }
 
-        //public double AverageGrades(double [] array)
-        //{
-        //    double averageSum = 0;
-
-        //    int count = array.Count();
-        //    foreach (var grade in array)
-        //    {
-        //        averageSum += grade;
-        //    }
-
-        //    double finalSum = averageSum/count;
-        //    return finalSum;
-        //}
 
         //Problem 4
         public string Problem4(string userInput)
         {
-            string letterCount = "";
-            int count = 0;
+            var letterCount = "";
+            string newWord = userInput.ToLower();
+            var result = newWord.Distinct().OrderBy(a => a);
 
-
+            foreach (var item in result)
+            {
+                var newResult = newWord.Count(u => u == item);
+                letterCount += Char.ToString(item) + newResult;
+            }
+           
             return letterCount;
 
 

@@ -20,6 +20,8 @@ namespace LINQProblems
             Console.WriteLine("Please enter a word: ");
             string userInput = Console.ReadLine();
             string programOutput = problem.Problem4(userInput);
+            Console.WriteLine(programOutput);
+            Console.ReadLine();
         }
     }
 }
